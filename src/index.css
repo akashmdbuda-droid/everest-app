@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@300;400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #2C3E50;
+  --secondary: #D4775E;
+  --accent: #E67E22;
+  --neutral: #FAF8F3;
+  --dark: #34495E;
+  --success: #27AE60;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  color: var(--dark);
+  background-color: var(--neutral);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.text-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  .text-heading {
+    font-size: 2rem;
+  }
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  color: white;
+  padding: 12px 32px;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #D4775E;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(230, 126, 34, 0.3);
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  color: white;
+  padding: 12px 32px;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: #C55640;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(212, 119, 94, 0.3);
+}
+
+.gradient-accent {
+  background: linear-gradient(135deg, #E67E22 0%, #D4775E 100%);
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.section-padding {
+  padding: 80px 20px;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 60px 20px;
+  }
+}
+
+.container-max {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+input, textarea, select {
+  border: 1px solid #DDD;
+  border-radius: 4px;
+  padding: 12px;
+  font-family: 'Lato', sans-serif;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.1);
+}
+
+.underline-accent {
+  position: relative;
+  display: inline-block;
+  color: var(--dark);
+}
+
+.underline-accent::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--accent);
+  border-radius: 2px;
+}
