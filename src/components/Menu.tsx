@@ -12,7 +12,7 @@ export default function Menu() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const menuRef = useRef(null);
-  const isInView = useInView(menuRef, { amount: 0.1 });
+  const isInView = useInView(menuRef, { amount: 0 });
   const [showMobileButton, setShowMobileButton] = useState(false);
 
   useEffect(() => {
