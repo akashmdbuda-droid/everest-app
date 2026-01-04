@@ -1,15 +1,23 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Leaf, Flame, Info, Menu as MenuIcon, X } from 'lucide-react';
 import SectionWrapper from './SectionWrapper';
 import clsx from 'clsx';
 import { MENU_DATA, MenuItem } from '../data/menu';
 import Modal from './ui/Modal';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, useInView } from 'framer-motion';
 
 export default function Menu() {
   const [selectedCategory, setSelectedCategory] = useState<string>(MENU_DATA[0]?.id || '');
   const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const menuRef = useRef(null);
+  const isInView = useInView(menuRef, { amount: 0.1 });
+  const [showMobileButton, setShowMobileButton] = useState(false);
+
+  useEffect(() => {
+    setShowMobileButton(isInView);
+  }, [isInView]);
 
   const categories = MENU_DATA;
   const activeCategory = categories.find((cat) => cat.id === selectedCategory);
@@ -31,7 +39,7 @@ export default function Menu() {
 
   return (
     <SectionWrapper id="menu" className="bg-white relative overflow-hidden">
-      <div className="container-max relative z-10 pb-20 md:pb-0">
+      <div ref={menuRef} className="container-max relative z-10 pb-20 md:pb-0">
         <div className="text-center mb-8 md:mb-16">
           <h2 className="text-heading mb-4 text-primary">Our Menu</h2>
           <div className="w-24 h-1 bg-secondary mx-auto mb-6"></div>
@@ -60,16 +68,28 @@ export default function Menu() {
               ))}
             </div>
 
-            {/* Mobile Category Trigger Button */}
-            <div className="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-40">
-              <button
-                onClick={() => setIsMobileMenuOpen(true)}
-                className="bg-primary text-white shadow-2xl flex items-center gap-3 rounded-full px-8 py-4 hover:bg-primary/90 transition-colors"
-              >
-                <MenuIcon size={20} />
-                <span className="font-bold uppercase tracking-widest text-sm">Browse Menu</span>
-              </button>
-            </div>
+            {/* Mobile Category Trigger Button - Only visible when menu is in view */}
+            <AnimatePresence>
+              {showMobileButton && (
+                <div className="md:hidden fixed bottom-6 left-0 right-0 z-40 flex justify-center pointer-events-none">
+                  <motion.div
+                    initial={{ y: 100, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: 100, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="pointer-events-auto"
+                  >
+                    <button
+                      onClick={() => setIsMobileMenuOpen(true)}
+                      className="bg-primary text-white shadow-2xl flex items-center gap-3 rounded-full px-8 py-4 hover:bg-primary/90 transition-colors"
+                    >
+                      <MenuIcon size={20} />
+                      <span className="font-bold uppercase tracking-widest text-sm">Browse Menu</span>
+                    </button>
+                  </motion.div>
+                </div>
+              )}
+            </AnimatePresence>
 
             {/* Mobile Category Overlay */}
             <AnimatePresence>
