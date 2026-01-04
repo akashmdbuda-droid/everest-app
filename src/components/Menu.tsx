@@ -55,7 +55,7 @@ export default function Menu() {
           <h2 className="text-heading mb-4 text-primary">Our Menu</h2>
           <div className="w-24 h-1 bg-secondary mx-auto mb-6"></div>
           <p className="text-lg text-gray-600 font-serif italic">
-            Discover the authentic flavors of the Himalayas
+            Experience the authentic flavors of the Himalayas
           </p>
         </div>
 
