@@ -11,50 +11,38 @@ interface GalleryImage {
 const galleryImages: GalleryImage[] = [
   {
     id: '1',
-    src: 'https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?w=800&h=600&fit=crop',
-    alt: 'Delicious Himalayan Curry',
+    src: `${import.meta.env.BASE_URL}images/gallery_naan.jpg`,
+    alt: 'Freshly Baked Naan',
     category: 'food',
   },
   {
     id: '2',
-    src: 'https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?w=800&h=600&fit=crop',
-    alt: 'Restaurant Ambiance',
-    category: 'ambiance',
+    src: `${import.meta.env.BASE_URL}images/gallery_biryani.jpg`,
+    alt: 'Aromatic Biryani',
+    category: 'food',
   },
   {
     id: '3',
-    src: 'https://images.pexels.com/photos/821365/pexels-photo-821365.jpeg?w=800&h=600&fit=crop',
-    alt: 'Signature Momos',
+    src: `${import.meta.env.BASE_URL}images/gallery_saag.jpg`,
+    alt: 'Palak Paneer',
     category: 'food',
   },
   {
     id: '4',
-    src: 'https://images.pexels.com/photos/1624487/pexels-photo-1624487.jpeg?w=800&h=600&fit=crop',
-    alt: 'Fine Dining Experience',
+    src: `${import.meta.env.BASE_URL}images/gallery_interior_1.jpg`,
+    alt: 'Modern Dining Space',
     category: 'ambiance',
   },
   {
     id: '5',
-    src: 'https://images.pexels.com/photos/1995927/pexels-photo-1995927.jpeg?w=800&h=600&fit=crop',
-    alt: 'Traditional Thali',
-    category: 'food',
+    src: `${import.meta.env.BASE_URL}images/gallery_interior_2.jpg`,
+    alt: 'Bar & Lounge Area',
+    category: 'ambiance',
   },
   {
     id: '6',
-    src: 'https://images.pexels.com/photos/5632399/pexels-photo-5632399.jpeg?w=800&h=600&fit=crop',
-    alt: 'Special Events',
-    category: 'events',
-  },
-  {
-    id: '7',
-    src: 'https://images.pexels.com/photos/2209539/pexels-photo-2209539.jpeg?w=800&h=600&fit=crop',
-    alt: 'Artfully Plated Dish',
-    category: 'food',
-  },
-  {
-    id: '8',
-    src: 'https://images.pexels.com/photos/1397132/pexels-photo-1397132.jpeg?w=800&h=600&fit=crop',
-    alt: 'Restaurant Interior',
+    src: `${import.meta.env.BASE_URL}images/gallery_exterior.jpg`,
+    alt: 'Restaurant Exterior',
     category: 'ambiance',
   },
 ];
@@ -83,11 +71,10 @@ export default function Gallery() {
             <button
               key={filter}
               onClick={() => setActiveFilter(filter)}
-              className={`px-6 py-2 rounded-full font-medium transition-all capitalize ${
-                activeFilter === filter
-                  ? 'text-white'
-                  : 'bg-gray-100 border-2 text-gray-700'
-              }`}
+              className={`px-6 py-2 rounded-full font-medium transition-all capitalize ${activeFilter === filter
+                ? 'text-white'
+                : 'bg-gray-100 border-2 text-gray-700'
+                }`}
               style={{
                 backgroundColor: activeFilter === filter ? '#E67E22' : '#F0F0F0',
                 borderColor: activeFilter === filter ? '#E67E22' : '#DDD',
@@ -104,7 +91,6 @@ export default function Gallery() {
               key={image.id}
               className="relative overflow-hidden rounded-lg cursor-pointer group h-64"
               onClick={() => setSelectedImage(image)}
-              style={{ gridRowEnd: index % 5 === 0 ? 'span 2' : 'span 1' }}
             >
               <img
                 src={image.src}

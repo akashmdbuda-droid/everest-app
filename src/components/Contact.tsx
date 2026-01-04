@@ -108,9 +108,8 @@ export default function Contact() {
                 <div>
                   <h4 className="font-bold mb-1">Hours</h4>
                   <p className="text-gray-600">
-                    Monday - Thursday: 5:00 PM - 10:00 PM<br />
-                    Friday - Saturday: 5:00 PM - 11:00 PM<br />
-                    Sunday: 4:00 PM - 9:00 PM
+                    Tuesday: Holiday (Closed)<br />
+                    Mon, Wed - Sun: 11:00 AM - 10:00 PM
                   </p>
                 </div>
               </div>

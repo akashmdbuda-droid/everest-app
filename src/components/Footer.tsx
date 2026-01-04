@@ -35,18 +35,13 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-bold uppercase tracking-widest mb-6 text-secondary">Hours</h4>
             <p className="text-gray-300 font-light leading-relaxed">
-              <strong className="text-white block mb-1">Mon - Thu</strong>
-              5:00 PM - 10:00 PM
+              <strong className="text-white block mb-1">Tuesday</strong>
+              <span className="text-secondary font-bold">Holiday (Closed)</span>
             </p>
             <div className="h-4"></div>
             <p className="text-gray-300 font-light leading-relaxed">
-              <strong className="text-white block mb-1">Fri - Sat</strong>
-              5:00 PM - 11:00 PM
-            </p>
-            <div className="h-4"></div>
-            <p className="text-gray-300 font-light leading-relaxed">
-              <strong className="text-white block mb-1">Sunday</strong>
-              4:00 PM - 9:00 PM
+              <strong className="text-white block mb-1">Mon, Wed - Sun</strong>
+              11:00 AM - 10:00 PM
             </p>
           </div>
 
