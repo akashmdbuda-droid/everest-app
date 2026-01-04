@@ -99,7 +99,7 @@ export default function Menu() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: '100%' }}
                   transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                  className="fixed inset-0 z-[60] bg-white flex flex-col pt-12 px-6 pb-6"
+                  className="fixed inset-0 z-[60] bg-white flex flex-col pt-28 px-6 pb-6"
                 >
                   <div className="flex justify-between items-center mb-8">
                     <h3 className="text-2xl font-serif font-bold text-primary">Menu Categories</h3>

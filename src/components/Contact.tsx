@@ -72,9 +72,9 @@ export default function Contact() {
                 <div>
                   <h4 className="font-bold mb-1">Location</h4>
                   <p className="text-gray-600">
-                    1234 Mountain Peak Avenue<br />
-                    Denver, Colorado 80202<br />
-                    USA
+                    1086 Budapest<br />
+                    Üllői út 50.<br />
+                    Hungary
                   </p>
                 </div>
               </div>
@@ -84,8 +84,8 @@ export default function Contact() {
                 <div>
                   <h4 className="font-bold mb-1">Phone</h4>
                   <p className="text-gray-600">
-                    <a href="tel:+13035551234" className="hover:text-orange-600">
-                      +1 (303) 555-1234
+                    <a href="tel:+3615551234" className="hover:text-orange-600">
+                      +36 1 555 1234
                     </a>
                   </p>
                 </div>

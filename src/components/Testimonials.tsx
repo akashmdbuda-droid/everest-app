@@ -12,24 +12,24 @@ interface Testimonial {
 const defaultTestimonials: Testimonial[] = [
   {
     id: '1',
-    customer_name: 'Sarah Mitchell',
+    customer_name: 'Szabó Gábor',
     rating: 5,
     comment:
-      'An unforgettable dining experience! The food was exceptional and the service was impeccable. We felt like we were dining at the foot of Everest itself.',
+      'Finally, authentic Himalayan flavors in Budapest! The Biryani is fantastic and the service was incredibly warm and welcoming.',
   },
   {
     id: '2',
-    customer_name: 'James Chen',
+    customer_name: 'Nagy Péter',
     rating: 5,
     comment:
-      'The momos are absolutely divine! I\'ve traveled to Nepal, and these taste just like the authentic street food I had there. Highly recommended!',
+      'Amazing choice for team dinners! The food is tasty, affordable, and the portions are generous. Perfect for large groups.',
   },
   {
     id: '3',
-    customer_name: 'Emma Richardson',
+    customer_name: 'Varga Katalin',
     rating: 5,
     comment:
-      'Beautiful ambiance, warm hospitality, and incredible flavors. This restaurant perfectly captures the spirit of the Himalayas.',
+      'Beautiful ambiance and incredible flavors. A perfect spot for a cozy dinner in the Corvin Quarter. Will definitely return.',
   },
 ];
 
