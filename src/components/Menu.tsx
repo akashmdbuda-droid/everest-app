@@ -34,7 +34,18 @@ export default function Menu() {
   const handleCategorySelect = (categoryId: string) => {
     setSelectedCategory(categoryId);
     setIsMobileMenuOpen(false);
-    // Optional: scroll to top of menu if needed, but switching content is usually enough
+
+    // Scroll to top of menu to ensure user sees new content and "isInView" remains true
+    if (menuRef.current) {
+      const headerOffset = 100; // Account for fixed header
+      const elementPosition = (menuRef.current as HTMLElement).getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   };
 
   return (
