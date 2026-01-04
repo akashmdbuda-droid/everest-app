@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   // Base path for GitHub Pages - change 'everest-app' to your repository name
-  base: '/everest-app/',
+  base: '/',
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
